@@ -71,7 +71,7 @@ class ZINORMLoss(nn.Module):
         t2 = lamda * torch.square(pi)
         loss = t1 + t2
         if self.reduction == 'mean':
-            return loss.mean(), t1, t2
+            return loss.mean()
         elif self.reduction == 'sum':
             return loss.sum()
         return loss
